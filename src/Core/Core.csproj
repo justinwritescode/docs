@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>justinwritescode.Types.Core</AssemblyName>
+    <PackageId>justinwritescode.Types.Core</PackageId>
+    <RootNamespace>JustinWritesCode.Types</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../Abstractions/Abstractions.csproj" />
+  </ItemGroup>
+</Project>
