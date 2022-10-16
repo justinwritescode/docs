@@ -7,4 +7,4 @@ repo_name: justinwritescode/Types
 edit_uri: "tree/main/docs"
 docs_dir: docs
 nav:
-  - README.md
+  - Types: index.md

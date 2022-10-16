@@ -2,5 +2,6 @@
  <ItemGroup>
   <ProjectReference Include="./Abstractions/Abstractions.csproj" />
   <ProjectReference Include="./Core/Core.csproj" />
+  <ProjectReference Include="./Core.Enumeration/" />
  </ItemGroup>
 </Project>

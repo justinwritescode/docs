@@ -1,0 +1,127 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>JustinWritesCode.Types.$(AssemblyName)</PackageId>
+    <AssemblyName>$(PackageId)</AssemblyName>
+    <RootNamespace>$(PackageId)</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="System.ComponentModel.Annotations" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="CodeGenerator\HelloWorldGenerator.cs">
+      <CodeLanguage></CodeLanguage>
+      <DefaultPackFolder></DefaultPackFolder>
+      <Pack></Pack>
+      <BuildAction></BuildAction>
+    </Compile>
+    <Compile Update="CodeGenerator\CodeGenerator\CodeGenerator.cs">
+      <CodeLanguage></CodeLanguage>
+      <DefaultPackFolder></DefaultPackFolder>
+      <Pack></Pack>
+      <BuildAction></BuildAction>
+    </Compile>
+    <Compile Update="CodeGenerator\CodeGenerator2\CodeGenerator2.cs">
+      <CodeLanguage></CodeLanguage>
+      <DefaultPackFolder></DefaultPackFolder>
+      <Pack></Pack>
+      <BuildAction></BuildAction>
+    </Compile>
+    <Compile Update="CodeGenerator\Attributes\HelloWorldAttribute.cs">
+      <CodeLanguage></CodeLanguage>
+      <DefaultPackFolder></DefaultPackFolder>
+      <Pack></Pack>
+      <BuildAction></BuildAction>
+    </Compile>
+    <Compile Update="CodeGenerator\Attributes\obj\netstandard1.0\Attributes.GlobalUsings.g.cs">
+      <CodeLanguage></CodeLanguage>
+      <DefaultPackFolder></DefaultPackFolder>
+      <Pack></Pack>
+      <BuildAction></BuildAction>
+    </Compile>
+    <Compile Update="CodeGenerator\Attributes\obj\netstandard1.0\.NETStandard,Version=v1.0.AssemblyAttributes.cs">
+      <CodeLanguage></CodeLanguage>
+      <DefaultPackFolder></DefaultPackFolder>
+      <Pack></Pack>
+      <BuildAction></BuildAction>
+    </Compile>
+    <Compile Update="CodeGenerator\Attributes\obj\netstandard1.0\Attributes.AssemblyInfo.cs">
+      <CodeLanguage></CodeLanguage>
+      <DefaultPackFolder></DefaultPackFolder>
+      <Pack></Pack>
+      <BuildAction></BuildAction>
+    </Compile>
+    <Compile Update="CodeGenerator\CodeGenerator.cs">
+      <CodeLanguage></CodeLanguage>
+      <DefaultPackFolder></DefaultPackFolder>
+      <Pack></Pack>
+      <BuildAction></BuildAction>
+    </Compile>
+    <Compile Update="CodeGenerator\obj\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.cs">
+      <CodeLanguage></CodeLanguage>
+      <DefaultPackFolder></DefaultPackFolder>
+      <Pack></Pack>
+      <BuildAction></BuildAction>
+    </Compile>
+    <Compile Update="CodeGenerator\obj\net6.0\CodeGenerator.AssemblyInfo.cs">
+      <CodeLanguage></CodeLanguage>
+      <DefaultPackFolder></DefaultPackFolder>
+      <Pack></Pack>
+      <BuildAction></BuildAction>
+    </Compile>
+    <Compile Update="CodeGenerator\obj\net6.0\CodeGenerator.GlobalUsings.g.cs">
+      <CodeLanguage></CodeLanguage>
+      <DefaultPackFolder></DefaultPackFolder>
+      <Pack></Pack>
+      <BuildAction></BuildAction>
+    </Compile>
+    <Compile Update="CodeGenerator\obj\netcoreapp2.1\.NETCoreApp,Version=v2.1.AssemblyAttributes.cs">
+      <CodeLanguage></CodeLanguage>
+      <DefaultPackFolder></DefaultPackFolder>
+      <Pack></Pack>
+      <BuildAction></BuildAction>
+    </Compile>
+    <Compile Update="CodeGenerator\obj\netcoreapp2.1\CodeGenerator.AssemblyInfo.cs">
+      <CodeLanguage></CodeLanguage>
+      <DefaultPackFolder></DefaultPackFolder>
+      <Pack></Pack>
+      <BuildAction></BuildAction>
+    </Compile>
+    <Compile Update="CodeGenerator\obj\netcoreapp2.1\CodeGenerator.GlobalUsings.g.cs">
+      <CodeLanguage></CodeLanguage>
+      <DefaultPackFolder></DefaultPackFolder>
+      <Pack></Pack>
+      <BuildAction></BuildAction>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="CodeGenerator\Attributes\obj\netstandard1.0\Attributes.GeneratedMSBuildEditorConfig.editorconfig">
+      <DefaultPackFolder></DefaultPackFolder>
+      <BuildAction></BuildAction>
+    </None>
+    <None Update="CodeGenerator\Attributes\obj\netstandard1.0\Attributes.AssemblyInfoInputs.cache">
+      <DefaultPackFolder></DefaultPackFolder>
+      <BuildAction></BuildAction>
+    </None>
+    <None Update="CodeGenerator\obj\net6.0\CodeGenerator.GeneratedMSBuildEditorConfig.editorconfig">
+      <DefaultPackFolder></DefaultPackFolder>
+      <BuildAction></BuildAction>
+    </None>
+    <None Update="CodeGenerator\obj\net6.0\CodeGenerator.AssemblyInfoInputs.cache">
+      <DefaultPackFolder></DefaultPackFolder>
+      <BuildAction></BuildAction>
+    </None>
+    <None Update="CodeGenerator\obj\net6.0\CodeGenerator.csproj.AssemblyReference.cache">
+      <DefaultPackFolder></DefaultPackFolder>
+      <BuildAction></BuildAction>
+    </None>
+    <None Update="CodeGenerator\obj\netcoreapp2.1\CodeGenerator.GeneratedMSBuildEditorConfig.editorconfig">
+      <DefaultPackFolder></DefaultPackFolder>
+      <BuildAction></BuildAction>
+    </None>
+    <None Update="CodeGenerator\obj\netcoreapp2.1\CodeGenerator.AssemblyInfoInputs.cache">
+      <DefaultPackFolder></DefaultPackFolder>
+      <BuildAction></BuildAction>
+    </None>
+  </ItemGroup>
+</Project>
