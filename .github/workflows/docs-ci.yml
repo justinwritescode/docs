@@ -48,7 +48,7 @@ jobs:
           # Email of the user to commit
           commit_email: justin@justinwritescode.com
           # Destination branch to push changes
-          # branch: # optional, default is master
+          branch: main# optional, default is master
           # Keep commit history
           keep_history: true # optional
           # Commit messgae
