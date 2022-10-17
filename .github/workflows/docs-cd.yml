@@ -17,10 +17,7 @@ permissions:
 
 jobs:
   docs_cd:
-    runs-on: ubuntu-latest
-    environment: docs
-    steps:
-    - uses: justinwritescode/docs/.github/workflows/docs-cd-deploy.yml@main
-      with:
-        deploy_folder: "types"
-      secrets: inherit
+    uses: justinwritescode/docs/.github/workflows/docs-cd-deploy.yml@main
+    with:
+      deploy_folder: "types"
+    secrets: inherit
