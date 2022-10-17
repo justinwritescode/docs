@@ -18,7 +18,7 @@ jobs:
   deploy:
     environment:
       name: docs
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: "https://justinwritescode.com/${{ inputs.deploy_folder }}"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
