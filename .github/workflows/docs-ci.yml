@@ -48,8 +48,8 @@ jobs:
           # Email of the user to commit
           commit_email: justin@justinwritescode.com
           # Destination branch to push changes
-          branch: main# optional, default is master
+          branch: main # optional, default is master
           # Keep commit history
           keep_history: true # optional
           # Commit messgae
-          commit_message: Docs CI push # optional
+          commit_message: "Docs CI push" # optional
