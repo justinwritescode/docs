@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: docs
     steps:
-    - uses: justinwritescode/docs/cd/docs-cd-deploy@latest
+    - uses: justinwritescode/docs/cd/docs-cd-deploy.yml@latest
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         deploy_folder: "types"
