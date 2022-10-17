@@ -4,9 +4,6 @@ name: gh-pages cd
 on:
   workflow_call:
     inputs:
-      github_tken:
-        required: true
-        type: string
       deploy_folder:
         required: true
         type: string
