@@ -40,7 +40,7 @@ jobs:
           # Source file from the origin directory
           source: "docs"
           # Destination repository
-          target_repo: https://github.com/justinwritescode/docs
+          target_repo: justinwritescode/docs
           # Directory to push the file to
           target_folder: "types" # optional
           # Email for the git commit
