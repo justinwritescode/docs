@@ -38,7 +38,7 @@ jobs:
         # uses: aaronbarnaby/deploy-to-subrepo@aee7dd664d56384afd1642c21afaf04993c5af8b
         uses: aaronbarnaby/deploy-to-subrepo@v1.0.2
         env:
-          API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          API_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
         with:
           # Source file from the origin directory
           source: "docs"
