@@ -6,7 +6,12 @@ name: gh docs cd
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
 
-
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_call:
+    inputs:
+      repository_name:
+        required: true
+        type: string
         
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -47,8 +52,8 @@ jobs:
           #/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ${{secrets.GITHUB_TOKEN}}
       - name: Find the target repository name
         run: |
-          repo_name=$(echo "${{github.workflow.inputs.github_repo}}"|cut -d "/" -f 2);
-          echo "${{github.workflow.inputs.github_repo}}"
+          repo_name=$(echo "${{inputs.github_repo}}"|cut -d "/" -f 2);
+          echo "${{inputs.github_repo}}"
           echo "Target repo name: $repo_name";
       #- name: Clone the docs repo
         #run: |
@@ -70,5 +75,5 @@ jobs:
         run: |
           cd /home/runner/work/docs/docs/$repo_name
           /usr/bin/git add .
-          /usr/bin/git commit -m "Docs CD Deployment of ${{github.workflow.inputs.github_repo}} repo"
+          /usr/bin/git commit -m "Docs CD Deployment of ${{inputs.github_repo}} repo"
           /usr/bin/git push -u origin HEAD:main
