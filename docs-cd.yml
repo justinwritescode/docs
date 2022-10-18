@@ -1,0 +1,46 @@
+# This workflow copies the repository's "source" folder to this repository's "target_folder" folder
+name: gh-pages cd
+
+on:
+  workflow_call:
+    inputs:
+      deploy_folder:
+        required: true
+        type: string
+
+# Allow one concurrent deployment
+concurrency:
+  group: "docs"
+  cancel-in-progress: true
+
+jobs:
+  # Single deploy job since we're just deploying
+  deploy:
+    environment:
+      name: docs
+      url: "https://justinwritescode.com/${{ inputs.deploy_folder }}"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Deploy to SubRepo
+        # You may pin to the exact commit or the version.
+        # uses: aaronbarnaby/deploy-to-subrepo@aee7dd664d56384afd1642c21afaf04993c5af8b
+        uses: aaronbarnaby/deploy-to-subrepo@v1.0.2
+        env:
+          API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          # Source file from the origin directory
+          source: "docs"
+          # Destination repository
+          target_repo: justinwritescode/docs
+          # Directory to push the file to
+          target_folder: ${{ inputs.deploy_folder }} # optional
+          # Email for the git commit
+          commit_email: docs-cd@justinwritescode.com # optional
+          # GitHub username for the commit
+          commit_name: "docs-cd" # optional
+          # branch to push file to, defaults to main
+          target_branch: "main" # optional
+          # A custom message for the commit
+          commit_message: "CD Docs Push" # optional
