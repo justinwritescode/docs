@@ -16,18 +16,15 @@ permissions:
   id-token: write
 
 jobs:
+  finr-repo-name:
+    name: "Find Repository Name"
+    uses: justinwritescode/github-substring-action/.github/workflows/action.yml@v1.0.0
+    with: 
+      value: $GITHUB_REPOSITORY
+      index_of_string: "justinwritescode/"
+      output_name: repo_name
   docs-cd:
-    runs-on: ubuntu-latest
-    name: "Docs CD"
-    steps:
-      - name: "Find Repository Name"
-        uses: bhowell2/github-substring-action@v1.0.0
-        with: 
-          value: $GITHUB_REPOSITORY
-          index_of_string: "justinwritescode/"
-          output_name: repo_name
-      - name: "Deploy to Docs Repo"
-        uses: justinwritescode/docs/.github/workflows/docs-cd-deploy.yml@main
-        with:
-          deploy_folder: "${{ repo_name }}"
-          secrets: inherit
+    uses: justinwritescode/docs/.github/workflows/docs-cd-deploy.yml@main
+    with:
+      deploy_folder: "${{ repo_name }}"
+    secrets: inherit
