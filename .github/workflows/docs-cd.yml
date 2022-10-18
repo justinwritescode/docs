@@ -1,0 +1,39 @@
+# This workflow builds and deploys an mkdocs site to GitHub Pages
+name: "justinwritescode/docs cd"
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: [$default-branch]
+    
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  calculate-repo-name:
+    runs-on: ubuntu-latest
+    outputs:
+      repo_name: ${{steps.step1.outputs.repo_name}}
+    steps:
+      - run: |
+          repo_name=$(echo ${{github.workflow.inputs.github_repo}} | cut -d "/" -f 2)
+          echo "::set-output name=repo_name::$repo_name"
+
+  deploy-to-docs:
+    needs: calculate-repo-name
+    environment:
+      name: docs
+      url: https://docs.justinwritescode.com/${{needs.calculate-repo-name.outputs.repo_name}}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: justinwritescode/deploy-to-docs@v0.9
+        with:
+          repository_name: ${{github.repository}}
+          github_token: ${{secrets.GIT_TOKEN}}
+  
