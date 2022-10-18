@@ -4,7 +4,10 @@ name: gh-pages cd
 on:
   workflow_call:
     inputs:
-      deploy_folder:
+      github_repo:
+        required: true
+        type: string
+      github_token:
         required: true
         type: string
 
@@ -23,6 +26,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - id: get-repo-name
+        run: |
+          repo_name=$(echo ${{github.workflow.inputs.github_repo}} | cut -d "/" -f 2)
+          echo "::set-output name=target_folder::$repo_name"
       - name: Deploy to SubRepo
         # You may pin to the exact commit or the version.
         # uses: aaronbarnaby/deploy-to-subrepo@aee7dd664d56384afd1642c21afaf04993c5af8b
@@ -35,7 +42,7 @@ jobs:
           # Destination repository
           target_repo: justinwritescode/docs
           # Directory to push the file to
-          target_folder: ${{ inputs.deploy_folder }} # optional
+          target_folder: ${{ target_folder }} # optional
           # Email for the git commit
           commit_email: docs-cd@justinwritescode.com # optional
           # GitHub username for the commit
