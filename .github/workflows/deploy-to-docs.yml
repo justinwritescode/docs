@@ -18,7 +18,7 @@ on:
     inputs:
       repository_name:
         required: true
-        type: text
+        type: string
  
 # Sets permissions of the GITHUB_TOKEN to allow writing to this repo
 permissions:
