@@ -19,6 +19,9 @@ on:
       repository_name:
         required: true
         type: string
+      foo:
+        required: true
+        type: string
  
 # Sets permissions of the GITHUB_TOKEN to allow writing to this repo
 permissions:
@@ -41,6 +44,8 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+      - name: echo foo
+        run: echo "${{inputs.foo}}"
 
       - name: Find the target repository name
         run: |
