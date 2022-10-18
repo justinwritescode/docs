@@ -42,7 +42,7 @@ jobs:
           # Destination repository
           target_repo: justinwritescode/docs
           # Directory to push the file to
-          target_folder: ${{ target_folder }} # optional
+          target_folder: ${{ inputs.target_folder }} # optional
           # Email for the git commit
           commit_email: docs-cd@justinwritescode.com # optional
           # GitHub username for the commit
