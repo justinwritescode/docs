@@ -12,6 +12,13 @@ on:
       repository_name:
         required: true
         type: string
+        
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+    inputs:
+      repository_name:
+        required: true
+        type: string
   
 # Sets permissions of the GITHUB_TOKEN to allow writing to this repo
 permissions:
