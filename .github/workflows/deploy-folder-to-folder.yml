@@ -54,11 +54,13 @@ jobs:
           echo "Target repo name: $repo_name";
       - name: Clone the docs repo
         run: |
+          echo "Cloning the docs repo..."
           git clone --single-branch --branch main "https://github-actions:${{secrets.GITHUB_TOKEN}}@github.com/justinwritescode/docs.git" /tmp/docs
           mkdir -p "/tmp/docs/$repo_name"
       - name: Clone the target repo
-        run: echo "Cloning the target repo."
-          git clone --single-branch --branch main "https://github-actions:${{secrets.GITHUB_TOKEN}}@github.com/justinwritescode/${{github.workflow.inputs.github_repo}}" "/tmp/${{$repo_name}}"
+        run: |
+          echo "Cloning the target repo..."
+          git clone --single-branch --branch main "https://github-actions:${{secrets.GITHUB_TOKEN}}@github.com/justinwritescode/${{github.workflow.inputs.github_repo}}" "/tmp/$repo_name"
       - name: Remove the target folder if it exists
         run: |
           if [[ -D "/tmp/docs/$repo_name" ]]; then
