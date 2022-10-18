@@ -1,5 +1,5 @@
 # This workflow builds and deploys an mkdocs site to GitHub Pages
-name: justinwritescode/docs cd
+name: "justinwritescode/docs cd"
 
 on:
   # Runs on pushes targeting the default branch
@@ -16,8 +16,18 @@ permissions:
   id-token: write
 
 jobs:
-  docs_cd:
-    uses: justinwritescode/docs/.github/workflows/docs-cd-deploy.yml@main
-    with:
-      deploy_folder: "types"
-    secrets: inherit
+  docs-cd:
+    runs-on: ubuntu-latest
+    name: "Docs CD"
+    steps:
+      - name: "Find Repository Name"
+        uses: bhowell2/github-substring-action/action.yml@v1.0.0
+        with: 
+          value: $GITHUB_REPOSITORY
+          index_of_string: "justinwritescode/"
+          output_name: repo_name
+      - name: "Deploy to Docs Repo"
+        uses: justinwritescode/docs/.github/workflows/docs-cd-deploy.yml@main
+        with:
+          deploy_folder: "${{ repo_name }}"
+          secrets: inherit
