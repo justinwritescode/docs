@@ -45,7 +45,7 @@ jobs:
           # Destination repository
           target_repo: justinwritescode/docs
           # Directory to push the file to
-          target_folder: ${{ repo_name }} # optional
+          target_folder: ${{ github.workflow.jobs.deploy.steps.get-repo-name.outputs.repo_name }} # optional
           # Email for the git commit
           commit_email: docs-cd@justinwritescode.com # optional
           # GitHub username for the commit
