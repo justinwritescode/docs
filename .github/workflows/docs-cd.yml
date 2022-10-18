@@ -20,4 +20,4 @@ jobs:
     uses: justinwritescode/docs/.github/workflows/docs-cd-deploy.yml@main
     with:
       github_repo: $GITHUB_REPOSITORY
-    secrets: inherit
+      github_token: ${{ secrets.GITHUB_TOKEN }}
