@@ -19,5 +19,5 @@ jobs:
   docs-cd:
     uses: justinwritescode/docs/.github/workflows/docs-cd-deploy.yml@main
     with:
-      repo_name: "${{ repo_name }}"
+      repo_name: $GITHUB_REPOSITORY
     secrets: inherit
