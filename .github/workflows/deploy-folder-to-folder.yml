@@ -62,7 +62,7 @@ jobs:
       - name: Clone the target repo
         run: |
           echo "Cloning the target repo..."
-          cd "/home/runer/work";
+          cd "/home/runer";
           /usr/bin/git clone --single-branch --branch main "https://github.com/justinwritescode/$repo_name"
       - name: Remove the target folder if it exists
         run: |
