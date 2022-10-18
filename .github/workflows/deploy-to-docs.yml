@@ -44,6 +44,8 @@ jobs:
 
       - name: Find the target repository name
         run: |
+          git config --global user.email "docs-cd@justinwritescode.com"
+          git config --global user.name "docs cd"
           repo_name=$(echo "${{github.event.inputs.repository_name}}"|cut -d "/" -f 2);
           echo "Target repo owner/name: ${{github.event.inputs.repository_name}}"
           echo "Target repo name: $repo_name";
