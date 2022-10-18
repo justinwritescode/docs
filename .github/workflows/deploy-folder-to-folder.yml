@@ -43,36 +43,36 @@ jobs:
       - uses: actions/checkout@v3
 
       # Runs a single command using the runners shell
-      - name: Setup git and the GITHUB_TOKEN
-        run: |
-          /usr/bin/git config --local --name-only --get-regexp core\.sshCommand
-          /usr/bin/git submodule foreach --recursive git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :
-          /usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
-          /usr/bin/git submodule foreach --recursive git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :
-          /usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ${{secrets.GITHUB_TOKEN}}
+      #- name: Setup git and the GITHUB_TOKEN
+        #run: |
+          #/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+          #/usr/bin/git submodule foreach --recursive git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :
+          #/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+          #/usr/bin/git submodule foreach --recursive git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :
+          #/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ${{secrets.GITHUB_TOKEN}}
       - name: Find the target repository name
         run: |
           repo_name=$(echo "${{github.workflow.inputs.github_repo}}"|cut -d "/" -f 2);
           echo "Target repo name: $repo_name";
-      - name: Clone the docs repo
-        run: |
-          echo "Cloning the docs repo..."
-          /usr/bin/git clone --single-branch --branch main "https://github.com/justinwritescode/docs.git" /tmp/docs
-          mkdir -p "/tmp/docs/$repo_name"
+      #- name: Clone the docs repo
+        #run: |
+          #echo "Cloning the docs repo..."
+          #/usr/bin/git clone --single-branch --branch main "https://github.com/justinwritescode/docs.git" /tmp/docs
+          #mkdir -p "/tmp/docs/$repo_name"
       - name: Clone the target repo
         run: |
           echo "Cloning the target repo..."
-          /usr/bin/git clone --single-branch --branch main "https://github.com/justinwritescode/${{github.workflow.inputs.github_repo}}" "/tmp/$repo_name"
+          /usr/bin/git clone --single-branch --branch main "https://github.com/justinwritescode/$repo_name" "/home/runner/work/$repo_name"
       - name: Remove the target folder if it exists
         run: |
-          if [[ -D "/tmp/docs/$repo_name" ]]; then
-            rm -rf "/tmp/docs/$repo_name";
+          if [[ -D "/home/runner/work/docs/docs/$repo_name" ]]; then
+            rm -rf "/home/runner/work/docs/docs/$repo_name";
           fi
       - name: Copy the files from the target repo into the docs folder
-        run: cp -R "/tmp/$repo_name" "/tmp/docs/$repo_name"
+        run: cp -R "/home/runner/work/$repo_name/docs" "/home/runner/work/docs/docs/$repo_name"
       - name: Commit the changes to the docs repo  
         run: |
-          cd /tmp/docs
+          cd /home/runner/work/docs/docs/$repo_name
           /usr/bin/git add .
           /usr/bin/git commit -m "Docs CD Deployment of ${{github.workflow.inputs.github_repo}} repo"
           /usr/bin/git push -u origin HEAD:main
