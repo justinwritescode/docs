@@ -19,9 +19,6 @@ on:
       repository_name:
         required: true
         type: string
-      foo:
-        required: true
-        type: string
  
 # Sets permissions of the GITHUB_TOKEN to allow writing to this repo
 permissions:
@@ -44,18 +41,16 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-      - name: echo foo
-        run: echo "${{inputs.foo}}"
 
       - name: Find the target repository name
         run: |
           repo_name=$(echo "${{github.event.inputs.repository_name}}"|cut -d "/" -f 2);
-          echo "${{github.event.inputs.repository_name}}"
+          echo "Target repo owner/name: ${{github.event.inputs.repository_name}}"
           echo "Target repo name: $repo_name";
       - name: Clone the target repo
         run: |
           echo "Cloning the target repo..."
-          cd "/home/runer";
+          cd "/home/runner";
           /usr/bin/git clone --single-branch --branch main "https://github.com/justinwritescode/$repo_name"
       - name: Remove the target folder if it exists
         run: |
