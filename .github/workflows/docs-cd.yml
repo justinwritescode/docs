@@ -35,4 +35,5 @@ jobs:
       - uses: justinwritescode/deploy-to-docs@v0.4
         with:
           repository_name: $GITHUB_REPOSITORY
+          token: ${{secrets.GITHUB_TOKEN}}
   
