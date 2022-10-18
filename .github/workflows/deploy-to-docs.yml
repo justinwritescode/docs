@@ -44,7 +44,7 @@ jobs:
 
       - name: Find the target repository name
         run: |
-          repo_name=$(echo "${{inputs.github_repo}}"|cut -d "/" -f 2);
+          repo_name=$(echo "${{github.event.inputs.github_repo}}"|cut -d "/" -f 2);
           echo "${{inputs.github_repo}}"
           echo "Target repo name: $repo_name";
       - name: Clone the target repo
@@ -63,6 +63,6 @@ jobs:
         run: |
           cd /home/runner/work/docs/docs/$repo_name
           /usr/bin/git add .
-          /usr/bin/git commit -m "Docs CD Deployment of ${{inputs.github_repo}} repo"
+          /usr/bin/git commit -m "Docs CD Deployment of ${{github.event.inputs.github_repo}} repo"
           /usr/bin/git push -u origin HEAD:main
       
