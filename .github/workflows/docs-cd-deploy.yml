@@ -8,11 +8,11 @@ on:
         required: true
         type: string
         
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-#permissions:
-#  contents: write
-#  pages: write
-#  id-token: write
+# Sets permissions of the GITHUB_TOKEN to allow writing to this repo
+permissions:
+  contents: write
+  pages: write
+  id-token: write
 
 # Allow one concurrent deployment
 concurrency:
@@ -23,7 +23,7 @@ jobs:
   # Single deploy job since we're just deploying
   deploy:
     environment:
-      name: docs
+      name: gh-pages
       url: "https://justinwritescode.com/${{ inputs.deploy_folder }}"
     runs-on: ubuntu-latest
     steps:
@@ -47,7 +47,7 @@ jobs:
           # Directory to push the file to
           target_folder: ${{ github.workflow.jobs.deploy.steps.get-repo-name.outputs.repo_name }} # optional
           # Email for the git commit
-          commit_email: justin@justinwritescode.com # optional
+          commit_email: justin@thebackroom.app # optional
           # GitHub username for the commit
           commit_name: "justinwritescode" # optional
           # branch to push file to, defaults to main
