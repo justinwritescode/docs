@@ -29,7 +29,7 @@ jobs:
     needs: calculate-folder-name
     environment:
       name: docs
-      url: https://docs.justinwritescode.com/${{needs.calculate-folder-name.outputs.folder_name}}
+      url: https://docs.justinwritescode.com/${{needs.calculate-folder-name.step1.outputs.folder_name}}
     runs-on: ubuntu-latest
     steps:
       - uses: justinwritescode/deploy-to-docs@v0.16
@@ -37,5 +37,5 @@ jobs:
           repository_name: ${{github.repository}}
           github_token: ${{secrets.GIT_TOKEN}}
           branch: ${{github.ref_name}}
-          folder_name: ${{needs.calculate-folder-name.outputs.folder_name}}
+          folder_name: ${{needs.calculate-folder-name.step1.outputs.folder_name}}
   
