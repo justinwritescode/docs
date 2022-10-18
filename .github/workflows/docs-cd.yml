@@ -19,11 +19,11 @@ jobs:
   calculate-repo-name:
     runs-on: ubuntu-latest
     outputs:
-      repo_name: ${{steps.step1.outputs.repo_name}}
+      folder_name: ${{steps.step1.outputs.folder_name}}
     steps:
       - run: |
-          repo_name=$(echo ${{github.workflow.inputs.github_repo}} | cut -d "/" -f 2)
-          echo "::set-output name=repo_name::$repo_name"
+          folder_name=$(echo ${{github.workflow.inputs.github_repo}} | cut -d "/" -f 2)
+          echo "::set-output name=folder_name::$folder_name"
 
   deploy-to-docs:
     needs: calculate-repo-name
@@ -37,4 +37,5 @@ jobs:
           repository_name: ${{github.repository}}
           github_token: ${{secrets.GIT_TOKEN}}
           branch: ${{github.ref}}
+          folder_name: ${{folder_name}}
   
