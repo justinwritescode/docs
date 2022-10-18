@@ -47,20 +47,13 @@ jobs:
           repo_name=$(echo "${{github.event.inputs.repository_name}}"|cut -d "/" -f 2);
           echo "Target repo owner/name: ${{github.event.inputs.repository_name}}"
           echo "Target repo name: $repo_name";
-      - name: Clone the target repo
-        run: |
           echo "Cloning the target repo..."
           cd "/home/runner";
           /usr/bin/git clone --single-branch --branch main "https://github.com/justinwritescode/$repo_name"
-      - name: Remove the target folder if it exists
-        run: |
           if [[ -D "/home/runner/work/docs/docs/$repo_name" ]]; then
             rm -rf "/home/runner/work/docs/docs/$repo_name";
           fi
-      - name: Copy the files from the target repo into the docs folder
-        run: cp -R "/home/runner/work/$repo_name/docs" "/home/runner/work/docs/docs/$repo_name"
-      - name: Commit the changes to the docs repo  
-        run: |
+          cp -R "/home/runner/work/$repo_name/docs" "/home/runner/work/docs/docs/$repo_name"
           cd /home/runner/work/docs/docs/$repo_name
           /usr/bin/git add .
           /usr/bin/git commit -m "Docs CD Deployment of ${{github.event.inputs.repository_name}} repo"
