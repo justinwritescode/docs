@@ -16,8 +16,20 @@ permissions:
   id-token: write
 
 jobs:
-  docs-cd:
-    uses: justinwritescode/docs/.github/workflows/deploy-to-docs.yml@main
-    with:
-      repository_name: $GITHUB_REPOSITORY
-    secrets: inherit
+  calculate-repo-name:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          repo_name=$(echo ${{github.workflow.inputs.github_repo}} | cut -d "/" -f 2)
+          echo "::set-output name=repo_name::$repo_name"
+
+  deploy-to-docs:
+    environment:
+      name: docs
+      url: https://docs.justinwritescode.com/${{repo_name}}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: justinwritescode/deploy-to-docs@v0.1
+        with:
+          repository_name: $GITHUB_REPOSITORY
+  
