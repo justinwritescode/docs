@@ -4,10 +4,10 @@ name: gh-pages cd
 on:
   workflow_call:
     inputs:
-      github_repo:
+      repository_name:
         required: true
         type: string
-      github_token:
+      token:
         required: true
         type: string
 
@@ -35,14 +35,14 @@ jobs:
         # uses: aaronbarnaby/deploy-to-subrepo@aee7dd664d56384afd1642c21afaf04993c5af8b
         uses: aaronbarnaby/deploy-to-subrepo@v1.0.2
         env:
-          API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          API_TOKEN: ${{ github.workflow.inputs.token }}
         with:
           # Source file from the origin directory
           source: "docs"
           # Destination repository
           target_repo: justinwritescode/docs
           # Directory to push the file to
-          target_folder: ${{ inputs.target_folder }} # optional
+          target_folder: ${{ repo_name }} # optional
           # Email for the git commit
           commit_email: docs-cd@justinwritescode.com # optional
           # GitHub username for the commit
