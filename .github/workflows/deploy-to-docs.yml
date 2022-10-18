@@ -18,8 +18,8 @@ on:
     inputs:
       repository_name:
         required: true
-        type: string
-  
+        type: text
+ 
 # Sets permissions of the GITHUB_TOKEN to allow writing to this repo
 permissions:
   contents: write
@@ -40,12 +40,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@master
-      - uses: fregante/setup-git-token@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-      - run: git branch new-branch
-      - run: git push origin new-branch
+      - uses: actions/checkout@v3
 
       # Runs a single command using the runners shell
       #- name: Setup git and the GITHUB_TOKEN
