@@ -45,7 +45,7 @@ jobs:
       - name: Find the target repository name
         run: |
           repo_name=$(echo "${{github.event.inputs.github_repo}}"|cut -d "/" -f 2);
-          echo "${{inputs.github_repo}}"
+          echo "${{github.event.inputs.github_repo}}"
           echo "Target repo name: $repo_name";
       - name: Clone the target repo
         run: |
