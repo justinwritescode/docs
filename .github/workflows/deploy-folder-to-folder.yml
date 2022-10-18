@@ -46,7 +46,7 @@ jobs:
       - name: Clone the repos and copy the contents of one's folder to another
         run: |
           cat "${{secrets.GITHUB_TOKEN}}" > "/tmp/github_token.txt"
-          repo_name=$(echo "${{github.workflow.inputs.github_repo}}"|cut -d "/" -f 2
+          repo_name=$(echo "${{github.workflow.inputs.github_repo}}"|cut -d "/" -f 2)
           echo "Cloning the target repo."
           git config --global user.email github-actions@justinwritescode.com
           git config --global user.name github-actions
