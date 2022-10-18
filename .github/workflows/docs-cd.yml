@@ -17,7 +17,7 @@ permissions:
 
 jobs:
   docs-cd:
-    uses: justinwritescode/docs/.github/workflows/deploy-folder-to-folder.yml@main
+    uses: justinwritescode/docs/.github/workflows/deploy-to-docs.yml@main
     with:
       repository_name: $GITHUB_REPOSITORY
     secrets: inherit
