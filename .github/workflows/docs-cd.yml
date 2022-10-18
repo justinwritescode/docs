@@ -4,7 +4,7 @@ name: "justinwritescode/docs cd"
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: [$default-branch]
+    branches: ["main","master']
     
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -32,7 +32,7 @@ jobs:
       url: https://docs.justinwritescode.com/${{needs.calculate-folder-name.outputs.folder_name}}
     runs-on: ubuntu-latest
     steps:
-      - uses: justinwritescode/deploy-to-docs@v0.25
+      - uses: justinwritescode/deploy-to-docs@v0.26
         with:
           repository_name: ${{github.repository}}
           github_token: ${{secrets.GIT_TOKEN}}
