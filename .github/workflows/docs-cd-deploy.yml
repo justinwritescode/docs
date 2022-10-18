@@ -7,6 +7,12 @@ on:
       repository_name:
         required: true
         type: string
+        
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+#permissions:
+#  contents: write
+#  pages: write
+#  id-token: write
 
 # Allow one concurrent deployment
 concurrency:
@@ -41,9 +47,9 @@ jobs:
           # Directory to push the file to
           target_folder: ${{ github.workflow.jobs.deploy.steps.get-repo-name.outputs.repo_name }} # optional
           # Email for the git commit
-          commit_email: docs-cd@justinwritescode.com # optional
+          commit_email: justin@justinwritescode.com # optional
           # GitHub username for the commit
-          commit_name: "docs-cd" # optional
+          commit_name: "justinwritescode" # optional
           # branch to push file to, defaults to main
           target_branch: "main" # optional
           # A custom message for the commit
