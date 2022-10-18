@@ -48,11 +48,9 @@ jobs:
           echo "Target repo owner/name: ${{github.event.inputs.repository_name}}"
           echo "Target repo name: $repo_name";
           echo "Cloning the target repo..."
-          cd "/home/runner";
+          cd "/home/runner/work";
           /usr/bin/git clone --single-branch --branch main "https://github.com/justinwritescode/$repo_name"
-          if [[ -D "/home/runner/work/docs/docs/$repo_name" ]]; then
-            rm -rf "/home/runner/work/docs/docs/$repo_name";
-          fi
+          rm -rf "/home/runner/work/docs/docs/$repo_name";
           cp -R "/home/runner/work/$repo_name/docs" "/home/runner/work/docs/docs/$repo_name"
           cd /home/runner/work/docs/docs/$repo_name
           /usr/bin/git add .
