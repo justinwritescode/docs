@@ -36,4 +36,5 @@ jobs:
         with:
           repository_name: ${{github.repository}}
           github_token: ${{secrets.GIT_TOKEN}}
+          branch: ${{github.ref}}
   
