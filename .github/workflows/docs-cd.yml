@@ -11,7 +11,7 @@ on:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -20,4 +20,4 @@ jobs:
     uses: justinwritescode/docs/.github/workflows/docs-cd-deploy.yml@main
     with:
       repository_name: $GITHUB_REPOSITORY
-      token: "${{ secrets.GITHUB_TOKEN }}"
+    secrets: inherit
