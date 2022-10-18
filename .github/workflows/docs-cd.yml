@@ -16,20 +16,20 @@ permissions:
   id-token: write
 
 jobs:
-  calculate-repo-name:
+  calculate-folder-name:
     runs-on: ubuntu-latest
     outputs:
       folder_name: ${{steps.step1.outputs.folder_name}}
     steps:
       - run: |
-          folder_name=$(echo ${{github.workflow.inputs.github_repo}} | cut -d "/" -f 2)
+          folder_name=$(echo ${{github.repository}} | cut -d "/" -f 2)
           echo "::set-output name=folder_name::$folder_name"
 
   deploy-to-docs:
-    needs: calculate-repo-name
+    needs: calculate-folder-name
     environment:
       name: docs
-      url: https://docs.justinwritescode.com/${{needs.calculate-repo-name.outputs.repo_name}}
+      url: https://docs.justinwritescode.com/${{needs.calculate-folder-name.outputs.folder_name}}
     runs-on: ubuntu-latest
     steps:
       - uses: justinwritescode/deploy-to-docs@v0.16
@@ -37,5 +37,5 @@ jobs:
           repository_name: ${{github.repository}}
           github_token: ${{secrets.GIT_TOKEN}}
           branch: ${{github.ref_name}}
-          folder_name: ${{needs.calculate-repo-name.step1.outputs.folder_name}}
+          folder_name: ${{needs.calculate-folder-name.outputs.folder_name}}
   
