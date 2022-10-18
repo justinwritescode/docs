@@ -36,6 +36,6 @@ jobs:
         with:
           repository_name: ${{github.repository}}
           github_token: ${{secrets.GIT_TOKEN}}
-          branch: ${{github.ref}}
+          branch: ${{github.ref_name}}
           folder_name: ${{github.jobs.calculate-repo-name.step1.outputs.folder_name}}
   
