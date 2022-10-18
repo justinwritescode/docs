@@ -32,8 +32,8 @@ jobs:
       url: https://docs.justinwritescode.com/${{needs.calculate-repo-name.outputs.repo_name}}
     runs-on: ubuntu-latest
     steps:
-      - uses: justinwritescode/deploy-to-docs@v0.4
+      - uses: justinwritescode/deploy-to-docs@v0.5
         with:
           repository_name: $GITHUB_REPOSITORY
-          token: ${{secrets.GITHUB_TOKEN}}
+          github_token: ${{secrets.GITHUB_TOKEN}}
   
