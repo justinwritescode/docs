@@ -3,5 +3,8 @@
         "activityBar.background": "#4D164A",
         "titleBar.activeBackground": "#6B1F68",
         "titleBar.activeForeground": "#FDF8FD"
-    }
+    },
+    "github-actions.workflows.pinned.workflows": [
+        ".github/workflows/docs-cd.yml"
+    ]
 }

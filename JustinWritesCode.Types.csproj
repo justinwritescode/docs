@@ -6,6 +6,7 @@
   <ItemGroup>
     <ProjectReference Include="./src/Abstractions/Abstractions.csproj" SolutionFolder="Core" />
     <ProjectReference Include="./src/Core/Core.csproj" SolutionFolder="Core" />
+    <ProjectReference Include="./src/ComponentModel/ComponentModel.csproj" SolutionFolder="Core" />
     <ProjectReference Include="./src/Domain/Domain.csproj" SolutionFolder="Core" />
     <ProjectReference Include="./src/Enums/Enums.csproj" SolutionFolder="Core" />
     <ProjectReference Include="./src/Enumerations/CodeGeneration/CodeGeneration.csproj" SolutionFolder="Core" />
@@ -13,6 +14,9 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="./tests/EnumGenerationTests/EnumGenerationTests.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+   <PackageReference Include="JustinWritesCode.Common.RestoreCommonFiles" /> 
   </ItemGroup>
   <ItemGroup>
     <SolutionFolder Include="Core" />
