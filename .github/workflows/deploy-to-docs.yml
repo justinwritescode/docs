@@ -46,8 +46,8 @@ jobs:
         run: |
           git config --global user.email "docs-cd@justinwritescode.com"
           git config --global user.name "docs cd"
-          repo_name=$(echo "${{inputs.repository_name}}"|cut -d "/" -f 2);
-          echo "Target repo owner/name: ${{inputs.repository_name}}"
+          repo_name="$(echo \"${{github.event.inputs.repository_name}}\"|cut -d "/" -f 2)";
+          echo "Target repo owner/name: ${{github.event.inputs.repository_name}}"
           echo "Target repo name: $repo_name";
           echo "Cloning the target repo..."
           cd "/home/runner/work";
@@ -56,6 +56,6 @@ jobs:
           cp -R "/home/runner/work/$repo_name/docs" "/home/runner/work/docs/docs/$repo_name"
           cd /home/runner/work/docs/docs/$repo_name
           /usr/bin/git add .
-          /usr/bin/git commit -m "Docs CD Deployment of ${{inputs.repository_name}} repo"
+          /usr/bin/git commit -m "Docs CD Deployment of ${{github.event.inputs.repository_name}} repo"
           /usr/bin/git push -u origin HEAD:main
       
