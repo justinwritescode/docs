@@ -62,8 +62,8 @@ jobs:
       - name: Clone the target repo
         run: |
           echo "Cloning the target repo..."
-          mkdir -p "/home/runner/work/$repo_name"
-          /usr/bin/git clone --single-branch --branch main "https://github.com/justinwritescode/$repo_name" "/home/runner/work/$repo_name"
+          cd "/home/runer/work";
+          /usr/bin/git clone --single-branch --branch main "https://github.com/justinwritescode/$repo_name"
       - name: Remove the target folder if it exists
         run: |
           if [[ -D "/home/runner/work/docs/docs/$repo_name" ]]; then
@@ -77,3 +77,4 @@ jobs:
           /usr/bin/git add .
           /usr/bin/git commit -m "Docs CD Deployment of ${{inputs.github_repo}} repo"
           /usr/bin/git push -u origin HEAD:main
+      
