@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>JustinWritesCode.Enumerations</PackageId>
+    <AssemblyName>$(PackageId)</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="./CodeGeneration/CodeGeneration.csproj" />
+    <ProjectReference Include="./Enumeration/Enumeration.csproj" />
+    <ProjectReference Include="./EnumerationsTests/EnumsTests.csproj" />
+  </ItemGroup>
+</Project>

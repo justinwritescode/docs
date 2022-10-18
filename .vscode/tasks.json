@@ -188,6 +188,32 @@
                 "reveal": "silent"
             },
             "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Insert Standard Header (C#)",
+            "command":"./insert-standard-header-csharp.sh",
+            "type": "process",
+            "args": ["${file}"],
+            "group": {
+                "kind": "none",
+                "isDefault": false
+            },
+            "options": {
+                "cwd": "${workspaceFolder}/.vscode"
+            },
+        },
+        {
+            "label": "Insert Standard Header (XML)",
+            "command":"./insert-standard-header-xml.sh",
+            "type": "process",
+            "args": ["${file}"],
+            "group": {
+                "kind": "none",
+                "isDefault": false
+            },
+            "options": {
+                "cwd": "${workspaceFolder}/.vscode"
+            },
         }
     ]
 }
