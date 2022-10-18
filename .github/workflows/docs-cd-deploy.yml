@@ -47,9 +47,9 @@ jobs:
           # Directory to push the file to
           target_folder: ${{ github.workflow.jobs.deploy.steps.get-repo-name.outputs.repo_name }} # optional
           # Email for the git commit
-          commit_email: justin@thebackroom.app # optional
+          commit_email: docs-cd@justinwritescode.com # optional
           # GitHub username for the commit
-          commit_name: "justinwritescode" # optional
+          commit_name: "docs-cd" # optional
           # branch to push file to, defaults to main
           target_branch: "main" # optional
           # A custom message for the commit
