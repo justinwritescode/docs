@@ -19,5 +19,5 @@ jobs:
   docs-cd:
     uses: justinwritescode/docs/.github/workflows/docs-cd-deploy.yml@main
     with:
-      github_repo: $GITHUB_REPOSITORY
-      github_token: ${{ secrets.GITHUB_TOKEN }}
+      repository_name: $GITHUB_REPOSITORY
+      token: ${{ secrets.GITHUB_TOKEN }}
