@@ -1,6 +1,6 @@
 # This workflow copies the docs subfolder from another repo into the docs/reponame subfolder of this repo
 
-name: gh docs cd
+name: justinwritescode docs cd
 
 # Controls when the workflow will run
 on:
@@ -12,7 +12,7 @@ on:
 #      repository_name:
 #        required: true
 #        type: string
-        
+   
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
     inputs:
@@ -30,7 +30,7 @@ permissions:
 concurrency:
   group: "docs"
   cancel-in-progress: true
-
+  
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   deploy-folder-to-folder:
@@ -42,23 +42,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      # Runs a single command using the runners shell
-      #- name: Setup git and the GITHUB_TOKEN
-        #run: |
-          #/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
-          #/usr/bin/git submodule foreach --recursive git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :
-          #/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
-          #/usr/bin/git submodule foreach --recursive git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :
-          #/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ${{secrets.GITHUB_TOKEN}}
       - name: Find the target repository name
         run: |
           repo_name=$(echo "${{inputs.github_repo}}"|cut -d "/" -f 2);
           echo "${{inputs.github_repo}}"
           echo "Target repo name: $repo_name";
-      #- name: Clone the docs repo
-        #run: |
-          #echo "Cloning the docs repo..."
-          #/usr/bin/git clone --single-branch --branch main "https://github.com/justinwritescode/docs.git" /tmp/docs
       - name: Clone the target repo
         run: |
           echo "Cloning the target repo..."
