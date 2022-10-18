@@ -7,9 +7,12 @@ on:
       repository_name:
         required: true
         type: string
-      token:
-        required: true
-        type: string
+        
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 # Allow one concurrent deployment
 concurrency:
@@ -35,7 +38,7 @@ jobs:
         # uses: aaronbarnaby/deploy-to-subrepo@aee7dd664d56384afd1642c21afaf04993c5af8b
         uses: aaronbarnaby/deploy-to-subrepo@v1.0.2
         env:
-          API_TOKEN: ${{ github.workflow.inputs.token }}
+          API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           # Source file from the origin directory
           source: "docs"
