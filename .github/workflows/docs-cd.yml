@@ -32,7 +32,7 @@ jobs:
       url: https://docs.justinwritescode.com/${{needs.calculate-repo-name.outputs.repo_name}}
     runs-on: ubuntu-latest
     steps:
-      - uses: justinwritescode/deploy-to-docs@v0.7
+      - uses: justinwritescode/deploy-to-docs@v0.8
         with:
           repository_name: $GITHUB_REPOSITORY
           github_token: ${{secrets.GIT_TOKEN}}
