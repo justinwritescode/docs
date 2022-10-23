@@ -1,0 +1,138 @@
+site_name: JustinWritesCode Technical Documentation
+site_description: JustinWritesCode Documentation
+site_url: https://docs.justinwritescode.com
+site_author: "Justin Chase"
+copyright: Copyright &copy; 2022 Justin Chase
+repo_url: https://github.com/justinwritescode/justinwritescode
+repo_name: justinwritescode/justinwritescode
+edit_uri: "tree/main/docs"
+docs_dir: docs
+theme:
+  name: material
+  custom_dir: docs/overrides
+  logo: "./assets/logo.png"
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+  palette:
+    scheme: slate
+    primary: blue
+    accent: teal
+features:
+  - navigation.instant
+  - navigation.tracking
+  - navigation.tabs
+  - navigation.tabs.sticky
+  - navigation.sections
+  - navigation.expand
+  - navigation.indexes
+  - navigation.top
+  - toc.integrate
+  - search.suggest
+  - search.highlighting
+  - search.share
+  - announce.dismiss
+  - rss:
+      categories: 
+        - tags
+      enabled: true
+      feed_ttl: 1440
+      image:  https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Feed-icon.svg/128px-Feed-icon.svg.png
+      length: 20
+      pretty_print: false
+      comments_path: "#__comments"
+      date_from_meta:
+        as_creation: "date"
+        as_update: false
+        datetime_format: "%Y-%m-%d %H:%M"
+        default_time: "09:30"
+        default_timezone: "America/New_York"
+      url_parameters:
+        utm_source: "documentation"
+        utm_medium: "rss"
+        utm_campaign: "feed-syndication"
+  - search
+  - blog
+  - tags:
+      tags_file: tags.md
+  - git-revision-date-localized:
+      type: date
+      enable_creation_date: true
+      fallback_to_build_date: true
+  - macros
+  - categories
+#  - literate-nav      
+  - codeinclude:
+      title_mode: pymdownx.tabbed
+  - section-index
+  - mkdocs-nav-enhancements
+  - gitsnippet
+extra:
+  homepage: https://justinwritescode.com
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/justhorny32
+      name: Justin Chase on Twitter
+    - icon: fontawesome/brands/telegram
+      link: https://t.me/justhorny32
+      name: Justin Chase on Telegram
+  version:
+    provider: mike
+    default: latest
+  analytics:
+    provider: google
+    property: G-JYQ7NBSP4R
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: Yes!
+          data: 1
+          note: >-
+            Thanks for your feedback!
+        - icon: material/emoticon-confused-outline
+          name: Meh
+          data: 0
+          note: >-
+            Thanks for your feedback!
+        - icon: material/emoticon-sad-outline
+          name: No!
+          data: -1
+          note: >-
+            Thanks for your feedback! Help us improve this page by
+            using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
+markdown_extensions:
+  - meta
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+      options:
+        custom_icons:
+          - overrides/.icons
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.snippets
+  - abbr
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.smartsymbols
+  - pymdownx.details
+  - footnotes
+  - toc:
+      permalink: true
+      title: On this page
+      permalink_title: Anchor link to this section for reference
+      slugify: !!python/name:pymdownx.slugs.uslugify
+      toc_depth: 3
+  - tables
+  - md_in_html
+  - attr_list
+  - admonition
+  - abbr
