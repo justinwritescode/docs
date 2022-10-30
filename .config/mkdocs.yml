@@ -6,10 +6,10 @@ copyright: Copyright &copy; 2022 Justin Chase
 repo_url: https://github.com/justinwritescode/justinwritescode
 repo_name: justinwritescode/justinwritescode
 edit_uri: "tree/main/docs"
-docs_dir: docs
+docs_dir: ../docs
 theme:
   name: material
-  custom_dir: docs/overrides
+  custom_dir: ../docs/overrides
   logo: "./assets/logo.png"
   icon:
     repo: fontawesome/brands/github
