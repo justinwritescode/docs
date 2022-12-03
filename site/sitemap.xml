@@ -2,87 +2,162 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.justinwritescode.com/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justinwritescode.com/CODE_OF_CONDUCT/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justinwritescode.com/CONTRIBUTING/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justinwritescode.com/LICENSE/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justinwritescode.com/SUPPORT/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justinwritescode.com/tags/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.justinwritescode.com/EntityFrameworkCore/</loc>
+         <lastmod>2022-10-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.justinwritescode.com/EntityFrameworkCore/CODE_OF_CONDUCT/</loc>
+         <lastmod>2022-10-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.justinwritescode.com/EntityFrameworkCore/CONTRIBUTING/</loc>
+         <lastmod>2022-10-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.justinwritescode.com/EntityFrameworkCore/LICENSE/</loc>
+         <lastmod>2022-10-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.justinwritescode.com/EntityFrameworkCore/SUPPORT/</loc>
+         <lastmod>2022-10-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.justinwritescode.com/MSBuild.Sdks/</loc>
+         <lastmod>2022-10-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.justinwritescode.com/MSBuild.Sdks/CODE_OF_CONDUCT/</loc>
+         <lastmod>2022-10-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.justinwritescode.com/MSBuild.Sdks/CONTRIBUTING/</loc>
+         <lastmod>2022-10-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.justinwritescode.com/MSBuild.Sdks/LICENSE/</loc>
+         <lastmod>2022-10-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.justinwritescode.com/MSBuild.Sdks/SUPPORT/</loc>
+         <lastmod>2022-10-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.justinwritescode.com/MSBuild.Utils/</loc>
+         <lastmod>2022-10-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.justinwritescode.com/MSBuild.Utils/CODE_OF_CONDUCT/</loc>
+         <lastmod>2022-10-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.justinwritescode.com/MSBuild.Utils/CONTRIBUTING/</loc>
+         <lastmod>2022-10-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.justinwritescode.com/MSBuild.Utils/LICENSE/</loc>
+         <lastmod>2022-10-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.justinwritescode.com/MSBuild.Utils/SUPPORT/</loc>
+         <lastmod>2022-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justinwritescode.com/Shared/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justinwritescode.com/Shared/CODE_OF_CONDUCT/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justinwritescode.com/Shared/CONTRIBUTING/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justinwritescode.com/Shared/LICENSE/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justinwritescode.com/Shared/SUPPORT/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justinwritescode.com/Types/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justinwritescode.com/Types/CODE_OF_CONDUCT/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justinwritescode.com/Types/CONTRIBUTING/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justinwritescode.com/Types/LICENSE/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justinwritescode.com/Types/SUPPORT/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.justinwritescode.com/overrides/partials/outdated/</loc>
-         <lastmod>2022-10-23</lastmod>
+         <lastmod>2022-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
