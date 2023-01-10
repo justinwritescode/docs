@@ -5,8 +5,15 @@ title: MIT License
 modified: 2023-01-09-07:12:12
 created: 2023-01-09-07:05:28
 license: MIT
-tags: [license, MIT]
-categories: [license, IP, copyright]
+tags:
+  - license
+  - MIT
+categories:
+  - license
+  - IP
+  - copyright
+slug: mit-license
+lastmod: 2023-01-10T07:19:46.207Z
 ---
 # MIT License
 
