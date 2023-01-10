@@ -1,7 +1,7 @@
 ---
 author: Justin Chase
 author_email: justin@justinwritescode.com
-title: $title
+title: Usings SDK
 subtitle: foo, bar
 modified: 2022-11-14-11:42:24
 created: 2022-11-12-08:52:03
@@ -16,10 +16,11 @@ categories:
   - readme
   - documentation
 date: 2022-11-14T17:15:59.416Z
-lastmod: 2023-01-10T07:21:34.000Z
+lastmod: 2023-01-10T07:29:31.908Z
+preview: /.frontmatter/content/The-Backroom.jpg
 ---
 
-# UsingsSdk
+# Usings SDK
 
 This SDK provides a way to add reusable `using` statements to your project files, packaged as a NuGet package.  This is useful if you want to declare a set of `using` statements that are used in multiple projects, but you don't want to have to add them to every project file.
 
