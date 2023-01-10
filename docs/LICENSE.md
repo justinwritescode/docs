@@ -1,3 +1,7 @@
+---
+title: MIT License
+lastmod: 2023-01-10T07:13:26.122Z
+---
 # MIT License
 
 Copyright (c) 2022 Justin Chase <justin@justinwritescode.com>, All Rights Reserved
