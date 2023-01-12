@@ -9,7 +9,7 @@ edit_uri: "tree/main/docs"
 docs_dir: ./src
 theme:
   name: material
-  custom_dir: ./src/overrides
+  custom_dir: ./site/overrides
   logo: "./assets/logo.png"
   icon:
     repo: fontawesome/brands/github
